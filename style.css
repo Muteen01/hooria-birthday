@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Comic+Neue:wght@700&family=Quicksand:wght@500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: none; /* Hide default cursor */
+}
+
+body {
+    min-height: 100vh;
+    /* Use the same gradient background animation as cause.css */
+    background: linear-gradient(-45deg, #ffe6e6, #e6e6ff, #ffebf5);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #4a4a4a;
+}
+
+/* Custom Cursor style */
+.cursor {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #ff69b4; /* Pink color */
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.1s;
+    box-shadow: 0 0 15px #ff69b4;
+}
+
+.container {
+    max-width: 800px;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-family: 'Bubblegum Sans', cursive;
+    font-size: 4rem;
+    color: #ff69b4;
+    text-shadow: 3px 3px 6px rgba(255, 105, 180, 0.4);
+    margin-bottom: 2rem;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.greeting {
+    font-size: 1.5rem;
+    margin-bottom: 3rem;
+    color: #777;
+    /* This will be filled by JavaScript */
+}
+
+.cta-button {
+    background: linear-gradient(45deg, #ff69b4, #ff99cc);
+    border: none;
+    border-radius: 50px;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    font-family: 'Comic Neue', cursive;
+    box-shadow: 0 5px 15px rgba(255, 105, 180, 0.3);
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(255, 105, 180, 0.5);
+}
+
+/* Keyframes for animations */
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 600px) {
+    h1 { font-size: 3rem; }
+    .cta-button { font-size: 1.2rem; padding: 0.8rem 2rem; }
+}
